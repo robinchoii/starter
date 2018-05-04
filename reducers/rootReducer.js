@@ -16,9 +16,9 @@ const rootReducer = (state, action) => {
             return Object.assign({}, state, {
                 ingredients: state.ingredients.concat(newIngredient)
             });
-
-        return state;
     };
+
+    return state;
 }
 
 
