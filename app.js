@@ -1,12 +1,8 @@
 import store from './store';
 import loadUI from './ui';
-import { addRecipe } from './actions/recipes';
-import { addIngredient } from './actions/ingredients';
+import { fetchRecipes } from './actions/recipes';
 
 
 loadUI();
 
-
-store.dispatch(addRecipe('Pancakes'));
-store.dispatch(addIngredient('Pancakes', 'Egg', 3));
-
+store.dispatch(fetchRecipes());
