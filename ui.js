@@ -4,11 +4,17 @@ import { addRecipe } from './actions/recipes';
 
 function updateUI() {
     const { recipes } = store.getState();
+    const { ingredients } = store.getState();
     // const renderRecipe = (recipe) => `<li>${ recipe.name } </li>`;
 
     $(".recipes > ul").html(recipes.map( recipe => {
         return `<li> ${ recipe.name }</li>`;
     }));
+
+    $(".ingredients > ul").html(ingredients.map( ingredient => {
+        return `<li> ${ ingredient.name }</li>`;
+    }));
+
 
 }
 
@@ -29,6 +35,11 @@ export default function loadUI() {
             <ul></ul>
             <input type='text' />
             <button>Add</button>
+        </div>
+
+        <div class='ingredients'>
+            <h2> Ingredients</h2>
+            <ul></ul>
         </div>
 
     `);
